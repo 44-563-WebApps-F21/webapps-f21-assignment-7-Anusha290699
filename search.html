@@ -22,7 +22,7 @@
     <P style="color:tomato">click on the squares to search for wild life</P>
     <div style="color:darkorange" id="click">Number of tries is zero</div>
     <div style="color: darkred" id="distance">Distance is unknown</div>
-
+    <div class = "container"><button onclick="newGame()">New Game</button>   </div>
     <div class="row container">
       <div class="row">
         <div class="col" style="padding: 0;"> <img src="Images/plant.jpg" id="image0" onclick="check(0)" height="200"
@@ -86,7 +86,8 @@
   let ids = ["image0", "image1", "image2", "image3", "image4","image5", "image6", "image7", "image8", "image9","image10", "image11", "image12", "image13", "image14",
             "image15", "image16", "image17", "image18", "image19","image20", "image21", "image22", "image23"];
   let triesCount=0;
-  let animalLocation=13;
+  let animalLocation= Math.floor(Math.random()*23);
+ 
 
   function check(position){
     id=ids[position]
@@ -124,9 +125,16 @@
             let distance = Math.abs(x2 - x1) + Math.abs(y2 - y1);
             return distance;
 }
+function newGame(){
+            clickCount =0
+            let treasureLocation = Math.random(0,24)
+            document.getElementById("tries").innerHTML="Number of clicks is "+clickCount
+            document.getElementById("distance").innerHTML="Distance is Unknown"
+}
+
 </script>
     
     
   
   </body>
-  </html
+  </html>
